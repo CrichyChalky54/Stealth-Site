@@ -1,3 +1,3 @@
 Website:
 
-https://crichychalky54.github.io/Stealth/
+https://crichychalky54.github.io/Stealth-Site/
