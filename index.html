@@ -5,31 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Stealth Site</title>
 <style>
+  /* Space Background Setup */
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     margin: 0;
     padding: 40px;
-    color: #333;
+    color: #f4f4f4; /* Lightened text for readability on dark bg */
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Creating the stars using CSS box-shadows */
+  #stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 100px 200px #FFF, 400px 500px #FFF, 800px 100px #FFF, 1200px 300px #FFF, 1500px 800px #FFF, 200px 900px #FFF, 600px 700px #FFF;
+    animation: spaceMove 50s linear infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 150px 250px #FFF, 450px 550px #FFF, 850px 150px #FFF, 1250px 350px #FFF, 250px 950px #FFF;
+    animation: spaceMove 100s linear infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  @keyframes spaceMove {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-2000px); }
   }
 
   h1 {
     text-align: center;
     font-size: 3em;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
   }
 
   h3 {
     text-align: center;
     font-weight: normal;
-    color: #34495e;
+    color: #bdc3c7;
     margin-bottom: 30px;
   }
 
   .links {
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
   }
 
   a {
@@ -42,6 +78,7 @@
     border-radius: 8px;
     font-size: 1.2em;
     transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   }
 
   a:hover {
@@ -64,6 +101,10 @@
 </head>
 <body>
 
+<!-- These divs create the moving stars -->
+<div id="stars"></div>
+<div id="stars2"></div>
+
 <h1>STEALTH SITE</h1>
 
 <h3>Link domain list for unblock shit</h3>
@@ -71,7 +112,7 @@
 <h3> WE DO NOT OWN ANY OF THESE WEBSITES NOR DO WE TAKE CREDIT FOR THEM. </h3>
 <h3> WE ALSO DO NOT ENDORSE WHATEVER THEY HAVE ON THESE WEBISTES. </h3>
   
-<div style="position: relative; z-index: 1; margin-bottom: 15px; padding: 12px; border: 1px solid rgba(255, 100, 100, 0.5); border-radius: 8px; background: rgba(255, 0, 0, 0.05); color: #ff6666; font-size: 1em; text-align: center; text-shadow: 0 0 4px #ff6666;">
+<div style="position: relative; z-index: 1; margin-bottom: 15px; padding: 12px; border: 1px solid rgba(255, 100, 100, 0.5); border-radius: 8px; background: rgba(255, 0, 0, 0.1); color: #ff8888; font-size: 1em; text-align: center; text-shadow: 0 0 4px #ff6666;">
 ⚠️Disclaimer: These links may lead to unsafe or unverified websites. 
 Use them at your own risk. We do not own or endorse any of these websites.
 </div>
@@ -88,7 +129,4 @@ Use them at your own risk. We do not own or endorse any of these websites.
 </div>
 
 </body>
-
 </html>
-
-
