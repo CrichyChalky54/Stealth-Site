@@ -11,9 +11,26 @@
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     margin: 0;
     padding: 40px;
-    color: #f4f4f4; /* Lightened text for readability on dark bg */
+    color: #f4f4f4; 
     min-height: 100vh;
     overflow-x: hidden;
+  }
+
+  /* Panic Button Indicator Style - Adjusted Size */
+  .panic-indicator {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    font-size: 0.85em; /* Slightly bigger as requested */
+    color: rgba(255, 255, 255, 0.8); 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 100;
+    pointer-events: none;
   }
 
   /* Creating the stars using CSS box-shadows */
@@ -79,6 +96,7 @@
     font-size: 1.2em;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
   }
 
   a:hover {
@@ -86,22 +104,18 @@
     transform: translateY(-2px);
   }
 
-  /* Optional: Add some spacing and responsiveness */
   @media (max-width: 600px) {
-    body {
-      padding: 20px;
-    }
-
-    a {
-      font-size: 1.1em;
-      padding: 12px 16px;
-    }
+    body { padding: 20px; }
+    h1 { font-size: 2.2em; }
+    a { font-size: 1.1em; padding: 12px 16px; }
   }
 </style>
 </head>
 <body>
 
-<!-- These divs create the moving stars -->
+<!-- Top Left Indicator -->
+<div class="panic-indicator">Panic Button is `</div>
+
 <div id="stars"></div>
 <div id="stars2"></div>
 
@@ -127,6 +141,14 @@ Use them at your own risk. We do not own or endorse any of these websites.
   <a href="https://unblockedgames76-pro.github.io/">Games 3</a>
   <a href="https://superliquidsoccer.gitlab.io/">Games 4</a>
 </div>
+
+<script>
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '`') {
+      window.location.replace("about:blank");
+    }
+  });
+</script>
 
 </body>
 </html>
